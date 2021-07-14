@@ -1,2 +1,4 @@
-FROM tomcat:8
-COPY C:\Users\hp\.jenkins\workspace\dummy\target\spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar /usr/local/tomcat/webapps/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar
+FROM openjdk:8
+EXPOSE 8080
+ADD target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar"]
